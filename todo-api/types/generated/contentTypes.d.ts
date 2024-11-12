@@ -388,7 +388,24 @@ export interface ApiAmiiboAmiibo extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    game: Schema.Attribute.String;
+    Game: Schema.Attribute.Enumeration<
+      [
+        'Super Smash Bros',
+        'Super Mario',
+        'Zelda',
+        'Shovel Knight',
+        'Splatoon',
+        'Wool Yoshi',
+        'Chibi Robo',
+        'Fire Emblem',
+        'Pokemon',
+        'Animal Crossing',
+        'Kriby',
+        'Metroid',
+        'Monster Hunter',
+        'Pikmin',
+      ]
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -396,6 +413,7 @@ export interface ApiAmiiboAmiibo extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    owned: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -406,6 +424,7 @@ export interface ApiAmiiboAmiibo extends Struct.CollectionTypeSchema {
 export interface ApiSkylanderSkylander extends Struct.CollectionTypeSchema {
   collectionName: 'skylanders';
   info: {
+    description: '';
     displayName: 'Skylander';
     pluralName: 'skylanders';
     singularName: 'skylander';
@@ -417,12 +436,33 @@ export interface ApiSkylanderSkylander extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    element: Schema.Attribute.String;
+    element: Schema.Attribute.Enumeration<
+      [
+        'Water',
+        'Magic',
+        'Fire',
+        'Undead',
+        'Tech',
+        'Earth',
+        'Air',
+        'Life',
+        'Light',
+        'Dark',
+      ]
+    >;
     figure_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    game: Schema.Attribute.String;
+    game: Schema.Attribute.Enumeration<
+      [
+        'Spyros Adventure',
+        'Giants',
+        'Swap Force',
+        'Trap Team',
+        'Super Chargers',
+      ]
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -430,6 +470,7 @@ export interface ApiSkylanderSkylander extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    owned: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

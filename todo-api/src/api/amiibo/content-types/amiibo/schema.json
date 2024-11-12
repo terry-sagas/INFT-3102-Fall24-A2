@@ -15,9 +15,6 @@
     "name": {
       "type": "string"
     },
-    "game": {
-      "type": "string"
-    },
     "figure_image": {
       "type": "media",
       "multiple": true,
@@ -28,6 +25,28 @@
         "videos",
         "audios"
       ]
+    },
+    "Game": {
+      "type": "enumeration",
+      "enum": [
+        "Super Smash Bros",
+        "Super Mario",
+        "Zelda",
+        "Shovel Knight",
+        "Splatoon",
+        "Wool Yoshi",
+        "Chibi Robo",
+        "Fire Emblem",
+        "Pokemon",
+        "Animal Crossing",
+        "Kriby",
+        "Metroid",
+        "Monster Hunter",
+        "Pikmin"
+      ]
+    },
+    "owned": {
+      "type": "boolean"
     }
   }
 }
