@@ -400,7 +400,7 @@ export interface ApiAmiiboAmiibo extends Struct.CollectionTypeSchema {
         'Fire Emblem',
         'Pokemon',
         'Animal Crossing',
-        'Kriby',
+        'Kirby',
         'Metroid',
         'Monster Hunter',
         'Pikmin',
