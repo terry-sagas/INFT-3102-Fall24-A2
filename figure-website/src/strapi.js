@@ -12,3 +12,12 @@ export const fetchAmiiboList = async () =>{
     }
     
 }
+export const fetchSkylandersList = async () =>{
+    try {
+        const respose = await axios.get(STRAPI_URL + "skylanders?populate=figure_image")
+        return respose.data
+    } catch (error){
+        console.error("Error in fetching list" + error)
+    }
+    
+}
