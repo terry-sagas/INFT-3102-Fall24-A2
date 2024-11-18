@@ -55,13 +55,13 @@ export default function Home() {
       <div className="container">
         <h1>About Me</h1>
         <h3>
-          My name is Terry Sagas, and video games are my passion. They allow me to escape the real world and explore a world of imagination. Video games have changed my life for the better and sometimes for the worse. Through games, I have met new friends and grown closer to family. In my free time, I play various video games, primarily Nintendo games like The Legend of Zelda or new releases. 
+          My name is Terry Sagas, and video games are my passion. I love collecting many things, like games, amiibos skylanders game consoles and some other stuff, i wanted to create a website to track my collection of skylanders and amiibos for personal use. 
           <br />
           <br />
-          I also enjoy playing card games like Marvel Snap, a fast-paced card battler that I can play on both my phone and computer. One game I’ve played for a long time is Destiny 2. I absolutely love it. Although I’m not playing it at the moment, I’ll likely return to it eventually. 
+          Skylanders is one of my favourite games and loved the toys to life genre growing up, and although i dont play the games much anymore i still love the figures and love displaying them. amiibos are used and are based on my favourite games of all time. 
           <br />
           <br />
-          Without video games, I may have been a smarter person or excelled more in school, but I wouldn’t have the same happiness, friends, or experiences that gaming has brought me. In the future, I hope to get into game development. Video games are my passion, and this website is just a small way of showcasing the games and consoles I own.
+          
         </h3>
       </div>
     </>

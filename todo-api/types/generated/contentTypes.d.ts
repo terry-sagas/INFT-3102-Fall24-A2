@@ -448,6 +448,7 @@ export interface ApiSkylanderSkylander extends Struct.CollectionTypeSchema {
         'Life',
         'Light',
         'Dark',
+        'Magic Item',
       ]
     >;
     figure_image: Schema.Attribute.Media<
@@ -455,13 +456,7 @@ export interface ApiSkylanderSkylander extends Struct.CollectionTypeSchema {
       true
     >;
     game: Schema.Attribute.Enumeration<
-      [
-        'Spyros Adventure',
-        'Giants',
-        'Swap Force',
-        'Trap Team',
-        'Super Chargers',
-      ]
+      ['Spyros Adventure', 'Giants', 'Swap Force', 'Trap Team', 'Magic Item']
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -472,6 +467,41 @@ export interface ApiSkylanderSkylander extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     owned: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
+    type_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTypeDisplayTypeDisplay extends Struct.CollectionTypeSchema {
+  collectionName: 'type_displays';
+  info: {
+    displayName: 'type_display';
+    pluralName: 'type-displays';
+    singularName: 'type-display';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::type-display.type-display'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -989,6 +1019,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::amiibo.amiibo': ApiAmiiboAmiibo;
       'api::skylander.skylander': ApiSkylanderSkylander;
+      'api::type-display.type-display': ApiTypeDisplayTypeDisplay;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

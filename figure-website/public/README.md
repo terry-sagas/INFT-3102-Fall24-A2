@@ -6,10 +6,6 @@ For my assignment 2 I will be doing something very similar to my assignment 1 bu
 What I could do if I have time:
 Pagination & Filtering is something i could implement, something that i want to try to do is little checkboxes filtering skylanders by game or element and amiibos by game. I think it could be something that makes the website work better. If i have time i want to make one more web page about what figures i want/need. 
 
-
-
-
-
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
 ## Getting Started

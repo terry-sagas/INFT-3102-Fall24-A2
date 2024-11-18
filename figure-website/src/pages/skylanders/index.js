@@ -17,15 +17,16 @@ export default function Skylanders({ skylanderList }) {
     };
 
     if (selectedGame === "All") {
-        filteredSkylanders = skylanderList.data;
+        filteredSkylanders = skylanderList.data.slice().sort((a, b) => a.name.localeCompare(b.name));
     } else {
-        filteredSkylanders = skylanderList.data.filter(skylander => skylander.game === selectedGame);
+        filteredSkylanders = skylanderList.data.filter(skylander => skylander.game === selectedGame).slice().sort((a, b) => a.name.localeCompare(b.name));
     }
     const gameBorderColors = {
         "Trap Team": "red",
         "Giants": "orange",
         "Spyros Adventure": "green",
         "Swap Force": "blue",
+        "Magic Item": "silver",
         "All": "cyan" 
     };
 
@@ -75,6 +76,11 @@ export default function Skylanders({ skylanderList }) {
                     font-size: 0.9em;
                     color: #b0b0b0;
                 }
+                .type_image_css {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+}
             `}</style>
             <div>
                 <h1 style={{ textAlign: 'center', color: '#e0e0e0' }}>Skylander List</h1>
@@ -94,6 +100,9 @@ export default function Skylanders({ skylanderList }) {
                 <input type="radio" id="Trap Team" name="Game" value="Trap Team" checked={selectedGame === "Trap Team"} onChange={handleGameSelection} />
                 <label htmlFor="Trap Team"> Trap Team &nbsp;&nbsp;</label>
 
+                <input type="radio" id="Magic Item" name="Game" value="Magic Item" checked={selectedGame === "Magic Item"} onChange={handleGameSelection} />
+                <label htmlFor="Magic Item"> Magic Item &nbsp;&nbsp;</label>
+
                 <div className="grid-container">
                     {filteredSkylanders.map((skylander, index) => (
                         <div key={index} className="card"style={{border: `2px solid ${gameBorderColors[skylander.game] || "cyan"}`
@@ -105,8 +114,16 @@ export default function Skylanders({ skylanderList }) {
                                     className="card-image"
                                 />
                             ) : null}
-                            <h2>{skylander.name}</h2>
-                            <h2>{skylander.element}</h2>
+                            <h2 className="type_image_css">{skylander.name}&nbsp;
+                            {skylander.type_image && skylander.type_image[0] && skylander.type_image[0]?.formats?.thumbnail?.url ? (
+                                <img
+                                    src={"http://localhost:1337" + skylander.type_image[0]?.formats?.thumbnail.url}
+                                    width={30}
+                                    height={30}
+                                    alt={skylander.element}
+                                />
+                            ) : null}
+                            </h2>
                             <p>{skylander.game}</p>
                         </div>
                     ))}

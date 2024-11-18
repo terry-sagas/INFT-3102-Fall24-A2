@@ -1,3 +1,16 @@
+
+LAB 2
+
+What I will be doing: 
+For my assignment 2 I will be doing something very similar to my assignment 1 but I will be making a static website displaying a about my collection, my collection of skylanders (a toys to life game most popular from 2011-2015) and my collection of amiibos (nintendo's version of skylanders but used less for the toys to life and more as a way to unlock things in games). I will be using a Strapi headless CMS postgres DB to hold all my data about skylanders and amiibos and fetch it using RESTful APIs. Each amiibo has an image, name, and game where it comes from, skylanders have an image, name, game, and element. I will be putting each skylander and amiibo in card-like displays for each one using CSS. For the website I will have a header and footer displayed on each page for easy navigation.
+
+What I could do if I have time:
+Pagination & Filtering is something i could implement, something that i want to try to do is little checkboxes filtering skylanders by game or element and amiibos by game. I think it could be something that makes the website work better. If i have time i want to make one more web page about what figures i want/need. 
+
+
+
+
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
@@ -59,3 +72,6 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+
+

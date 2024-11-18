@@ -33,7 +33,7 @@
         "Giants",
         "Swap Force",
         "Trap Team",
-        "Super Chargers"
+        "Magic Item"
       ]
     },
     "element": {
@@ -48,11 +48,23 @@
         "Air",
         "Life",
         "Light",
-        "Dark"
+        "Dark",
+        "Magic Item"
       ]
     },
     "owned": {
       "type": "boolean"
+    },
+    "type_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

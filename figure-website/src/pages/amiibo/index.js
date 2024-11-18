@@ -17,9 +17,9 @@ export default function Amiibos({ amiiboList }) {
     };
 
     if (selectedGame === "All") {
-        filteredAmiibos = amiiboList.data;
+        filteredAmiibos = amiiboList.data.slice().sort((a, b) => a.name.localeCompare(b.name));;
     } else {
-        filteredAmiibos = amiiboList.data.filter(amiibo => amiibo.Game === selectedGame);
+        filteredAmiibos = amiiboList.data.filter(amiibo => amiibo.Game === selectedGame).slice().sort((a, b) => a.name.localeCompare(b.name));
     }
     const gameBorderColors = {
         "Super Smash Bros": "blue",

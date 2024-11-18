@@ -30,7 +30,6 @@ export default function Header() {
   
         <ul>
           <li><a className="active" href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
           <li><a href="/amiibo">Amiibo List</a></li>
           <li><a href="/skylanders">Skylanders List</a></li>
         </ul>
